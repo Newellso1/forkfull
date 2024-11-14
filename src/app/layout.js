@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       >
         <div className="flex flex-col overflow-x-clip">
           <Header />
-          <main className="flex flex-col flex-grow md:mx-10 lg:mx-52">
+          <main className="flex flex-col flex-grow md:mx-42 xl:mx-56 2xl:mx-72">
             {children}
           </main>
           <Footer />
