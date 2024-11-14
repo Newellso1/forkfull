@@ -10,7 +10,7 @@ export default function MenuLinks() {
         <div className="w-0 group-hover:w-full h-[0.15em] bg-black rounded-sm transition-all hidden md:flex"></div>
       </div>
       <div className="group">
-        <li>Blog</li>
+        <li>About</li>
         <div className="w-0 group-hover:w-full h-[0.15em] bg-black rounded-sm transition-all hidden md:flex"></div>
       </div>
       <div className="group">

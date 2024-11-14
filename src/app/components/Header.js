@@ -15,10 +15,10 @@ export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className="sticky -top-0 left-0 w-full z-50 p-5 bg-white flex justify-between items-center shadow-md md:pb-4">
+    <nav className="sticky -top-0 left-0 w-full z-50 p-5 bg-white flex justify-between items-center border-b-2 border-black md:pb-4">
       <div className=" w-1/3 flex justify-start ">
         <h2
-          className={`${sankofa.className} text-3xl md:text-5xl font-bold tracking-widest`}
+          className={`${sankofa.className} text-2xl md:text-5xl font-bold tracking-widest`}
         >
           Forkfull
         </h2>
