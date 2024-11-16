@@ -23,11 +23,11 @@ export default function Header() {
           Forkfull
         </h2>
       </div>
-      <div className=" w-1/3 flex justify-center md:hidden  ">
+      <div className=" w-1/3   flex justify-center md:hidden  ">
         <Image
           src="/images/forkfull_logo.png"
-          height={25}
-          width={25}
+          height={19}
+          width={19}
           alt="logo"
           className=" rotate-12"
         />

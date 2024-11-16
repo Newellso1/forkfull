@@ -5,21 +5,38 @@ import { fetchRecipes } from "@/lib/recipes";
 import Image from "next/image";
 import { sankofa } from "./components/Header";
 import RecipeCard from "./components/recipes/recipe-card";
+import TopRated from "./components/recipes/top-rated";
+
+// export default function Home() {
+//   const [recipes, setRecipes] = useState([]);
+//   useEffect(() => {
+//     const getRecipes = async () => {
+//       const data = await fetchRecipes();
+//       if (data) setRecipes(data.recipes);
+//     };
+//     getRecipes();
+//   }, []);
 
 export default function Home() {
   const [recipes, setRecipes] = useState([]);
+  const [topRecipes, setTopRecipes] = useState(3);
   useEffect(() => {
     const getRecipes = async () => {
       const data = await fetchRecipes();
-      if (data) setRecipes(data.recipes);
+      if (data) {
+        const RatedRecipes = data.recipes
+          .sort((a, b) => b.rating - a.rating)
+          .slice(0, topRecipes);
+        setRecipes(RatedRecipes);
+      }
     };
     getRecipes();
-  }, []);
+  }, [topRecipes]);
 
   return (
     <div>
       <div
-        className={`${sankofa.className} text-3xl flex justify-center items-center p-10 tracking-wider md:text-5xl`}
+        className={`${sankofa.className} text-2xl flex justify-center items-center p-10 tracking-wider md:text-5xl`}
       >
         <p>Cook - Divide - Conquer</p>
       </div>
@@ -77,17 +94,20 @@ export default function Home() {
             table. Ready your ingredients, and let’s cook like true Norsemen!
           </p>
         </div>
-        <ul>
-          {recipes.map((recipe) => (
-            <li key={recipe.id}>
-              <RecipeCard
-                image={recipe.image}
-                name={recipe.name}
-                rating={recipe.rating}
-              />
-            </li>
-          ))}
-        </ul>
+        <div className=" relative p-4 border-2 border-black rounded-md">
+          <TopRated topRecipes={topRecipes} setTopRecipes={setTopRecipes} />
+          <ul className="flex gap-2 justify-center flex-wrap">
+            {recipes.map((recipe) => (
+              <li key={recipe.id}>
+                <RecipeCard
+                  image={recipe.image}
+                  name={recipe.name}
+                  rating={recipe.rating}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </div>
   );
