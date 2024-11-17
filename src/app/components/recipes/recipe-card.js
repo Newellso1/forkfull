@@ -1,4 +1,5 @@
 import Image from "next/image";
+import RatingStar from "./rating-star";
 
 export default function RecipeCard({
   name = "Name",
@@ -16,7 +17,8 @@ export default function RecipeCard({
           className="size-44 object-contain"
         />
         <h3>{name}</h3>
-        <p>{rating}</p>
+
+        <RatingStar rating={rating} />
       </article>
       <div className="bg-black/30 group-hover:bg-black h-[0.25em] w-10 rounded-sm "></div>
     </div>
