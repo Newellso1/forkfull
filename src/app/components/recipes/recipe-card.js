@@ -8,7 +8,7 @@ export default function RecipeCard({
 }) {
   return (
     <div className="flex flex-col items-center border-2 border-black/10 rounded-md p-2 group hover:border-black transition-all">
-      <article className="flex flex-col ju  h-64  w-44 p-2">
+      <article className="flex flex-col justify-around  h-64  w-44 p-2">
         <Image
           src={image}
           height={100}

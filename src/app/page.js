@@ -40,7 +40,7 @@ export default function Home() {
       >
         <p>Cook - Divide - Conquer</p>
       </div>
-      <section className="flex flex-col w-full md:max-h-[36em] md:flex-row md:border-y-2 border-black md:py-6">
+      <section className="flex flex-col w-full md:max-h-[36em] md:flex-row md:border-y-2 border-black md:py-10">
         <div className="md:w-1/2 bg-gray-300 flex justify-center">
           <Image
             src="/images/forkfull_1.jpg"
@@ -81,8 +81,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-4 items-center border-b-2 border-black p-4">
-        <div className="flex flex-col gap-4 px-4">
+      <section className="flex flex-col gap-4 md:gap-7 items-center border-b-2 border-black p-4 pb-8 md:p-10 md:pb-20">
+        <div className="flex flex-col gap-4 md:gap-7 px-4">
           <h2 className={`${sankofa.className} text-5xl text-center `}>
             Recipes
           </h2>
@@ -94,9 +94,9 @@ export default function Home() {
             table. Ready your ingredients, and let’s cook like true Norsemen!
           </p>
         </div>
-        <div className=" relative p-4 border-2 border-black rounded-md">
+        <div className=" relative p-7 border-2 flex  border-black rounded-md">
           <TopRated topRecipes={topRecipes} setTopRecipes={setTopRecipes} />
-          <ul className="flex gap-2 justify-center flex-wrap">
+          <ul className="flex gap-2 md:gap-10 md:w-[50em] md:max-w-[50em] justify-center flex-wrap">
             {recipes.map((recipe) => (
               <li key={recipe.id}>
                 <RecipeCard

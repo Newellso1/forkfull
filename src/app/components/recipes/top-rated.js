@@ -13,7 +13,7 @@ export default function TopRated({ topRecipes, setTopRecipes }) {
           <li
             key={value}
             onClick={() => handleSelect(value)}
-            className={` cursor-pointer p-1 box-content ${
+            className={` cursor-pointer p-0.5  box-content ${
               topRecipes === value
                 ? "border-white border-2 text-white rounded-md "
                 : ""

@@ -27,37 +27,52 @@ export default function RatingStar({ rating = 4.5 }) {
     <div className="flex">
       {remainder ? (
         <>
-          {Array.from({ length: starNumber - 1 }).map((_, index) => (
+          {Array.from({ length: starNumber }).map((_, index) => (
             <span key={index}>{emptyStar}</span>
           ))}
           <span className=" relative overflow-hidden ">
             <div className="">{emptyStar}</div>
             <div
-              className={`size-full absolute top-0 left-${
-                remainder > 8
-                  ? `3/4`
-                  : remainder > 6
-                  ? `2/4`
-                  : remainder > 4
-                  ? `1/2`
+              className={`size-full absolute top-0 ${
+                remainder == 9
+                  ? `left-[15px]`
+                  : remainder == 8
+                  ? `left-[14px]`
+                  : remainder == 7
+                  ? `left-[13px]`
+                  : remainder == 6
+                  ? `left-[12px]`
+                  : remainder == 5
+                  ? `left-[10px]`
+                  : remainder == 4
+                  ? `left-[9px]`
+                  : remainder == 3
+                  ? `left-[8px]`
+                  : remainder == 2
+                  ? `left-[6px]`
+                  : remainder == 1
+                  ? `left-[4px]`
                   : ``
-              }  bg-white opacity-50`}
+              } 
+            bg-white opacity-70`}
             ></div>
           </span>
-          <div className="flex">
+          {/* <div className="flex">
             {Array.from({ length: emptyStarNumber }).map((_, index) => (
               <span key={index} className={`opacity-50`}>
                 {emptyStar}
               </span>
             ))}
-          </div>
+          </div> */}
         </>
-      ) : (
+      ) : remainder < 1 ? (
         <>
           {Array.from({ length: starNumber }).map((_, index) => (
             <span key={index}>{emptyStar}</span>
           ))}
         </>
+      ) : (
+        ``
       )}
       <span className="ml-1">({rating})</span>
     </div>
