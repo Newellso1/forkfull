@@ -7,16 +7,6 @@ import { sankofa } from "./components/Header";
 import RecipeCard from "./components/recipes/recipe-card";
 import TopRated from "./components/recipes/top-rated";
 
-// export default function Home() {
-//   const [recipes, setRecipes] = useState([]);
-//   useEffect(() => {
-//     const getRecipes = async () => {
-//       const data = await fetchRecipes();
-//       if (data) setRecipes(data.recipes);
-//     };
-//     getRecipes();
-//   }, []);
-
 export default function Home() {
   const [recipes, setRecipes] = useState([]);
   const [topRecipes, setTopRecipes] = useState(3);
