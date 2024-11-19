@@ -9,3 +9,9 @@ export async function fetchRecipes() {
     return null;
   }
 }
+
+// export async function getStaticPaths() {
+//   const data = await fetchRecipes();
+//   const paths = data?.recipes.map
+
+// }

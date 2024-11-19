@@ -93,6 +93,7 @@ export default function Home() {
                   image={recipe.image}
                   name={recipe.name}
                   rating={recipe.rating}
+                  id={recipe.id}
                 />
               </li>
             ))}

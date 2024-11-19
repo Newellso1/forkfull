@@ -18,7 +18,7 @@ export default function NavMenu({ setNavOpen, navOpen }) {
           <NavButton setNavOpen={setNavOpen} navOpen={navOpen} />
         </div>
         <h2 className={`${sankofa.className} text-6xl`}>Menu</h2>
-        <MenuLinks />
+        <MenuLinks setNavOpen={setNavOpen} navOpen={navOpen} />
       </div>
     </div>
   );

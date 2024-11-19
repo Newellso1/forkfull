@@ -5,6 +5,7 @@ import NavButton from "./header/nav-button";
 import NavMenu from "./header/menu";
 import { useState } from "react";
 import MenuLinks from "./header/menu-links";
+import Link from "next/link";
 
 export const sankofa = Sankofa_Display({
   weight: "400",
@@ -17,11 +18,13 @@ export default function Header() {
   return (
     <nav className="sticky -top-0 left-0 w-full z-50 p-5 bg-white flex justify-between items-center border-b-2 border-black md:pb-4">
       <div className=" w-1/3 flex justify-start ">
-        <h2
-          className={`${sankofa.className} text-2xl md:text-5xl font-bold tracking-widest`}
-        >
-          Forkfull
-        </h2>
+        <Link href="/">
+          <h2
+            className={`${sankofa.className} text-2xl md:text-5xl font-bold tracking-widest`}
+          >
+            Forkfull
+          </h2>
+        </Link>
       </div>
       <div className=" w-1/3   flex justify-center md:hidden  ">
         <Image
@@ -36,7 +39,7 @@ export default function Header() {
         <NavButton setNavOpen={setNavOpen} navOpen={navOpen} />
       </div>
       <div className="hidden md:flex">
-        <MenuLinks />
+        <MenuLinks setNavOpen={setNavOpen} navOpen={navOpen} />
       </div>
       <NavMenu setNavOpen={setNavOpen} navOpen={navOpen} />
     </nav>
