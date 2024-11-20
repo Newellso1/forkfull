@@ -4,6 +4,7 @@ import { sankofa } from "@/app/components/Header";
 import recipeDescriptions from "@/lib/descriptions";
 import RatingStar from "@/app/components/recipes/rating-star";
 import RecipeTag from "@/app/components/individual-recipe/recipe-tag";
+import ScrollButton from "@/app/components/individual-recipe/scroll-button";
 
 export default async function IndividualRecipe({ params }) {
   const { slug } = params;
@@ -19,7 +20,8 @@ export default async function IndividualRecipe({ params }) {
   }
 
   return (
-    <div>
+    <div className="">
+      <ScrollButton section="recipe" />
       <Image
         src={recipeInfo.image}
         height={500}
@@ -36,7 +38,7 @@ export default async function IndividualRecipe({ params }) {
           ))}
         </article>
       </section>
-      <section className="m-4 border-2 border-black">
+      <section id="recipe" className="m-4 border-2 border-black">
         <div className="relative">
           <Image
             src={recipeInfo.image}
@@ -86,14 +88,26 @@ export default async function IndividualRecipe({ params }) {
 
           <div>{recipeInfo.caloriesPerServing}kl per serving</div>
         </div>
-        <ul className="flex flex-col gap-2">
-          {recipeInfo.instructions.map((step, index) => (
-            <li key={index} className="flex gap-1">
-              <div className="">{`${index + 1}.`}</div>
-              {step}
-            </li>
-          ))}
-        </ul>
+        <div className="p-2">
+          <ul className="flex flex-col m-2 gap-2">
+            <h4 className="text-xl underline">Ingredients</h4>
+            {recipeInfo.ingredients.map((ingr, index) => (
+              <li key={index} className="flex gap-2 items-center">
+                <div className="size-1 bg-black rounded-full"></div>
+                {ingr}
+              </li>
+            ))}
+          </ul>
+          <ul className="flex flex-col m-2 gap-2">
+            <h4 className="text-xl underline">Instructions</h4>
+            {recipeInfo.instructions.map((step, index) => (
+              <li key={index} className="flex gap-1">
+                <div className="">{`${index + 1}.`}</div>
+                {step}
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </div>
   );
