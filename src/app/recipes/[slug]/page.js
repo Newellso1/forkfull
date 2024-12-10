@@ -22,12 +22,14 @@ export default async function IndividualRecipe({ params }) {
   return (
     <div className="">
       <ScrollButton section="recipe" />
-      <Image
-        src={recipeInfo.image}
-        height={500}
-        width={500}
-        alt="recipe image"
-      ></Image>
+      <div className="relative">
+        <Image
+          src={recipeInfo.image}
+          height={500}
+          width={500}
+          alt="recipe image"
+        ></Image>
+      </div>
       <section className="mt-2 flex flex-col gap-2 p-2">
         <h1 className={`${sankofa.className} text-3xl font-bold`}>
           {recipeInfo.name}
@@ -38,7 +40,8 @@ export default async function IndividualRecipe({ params }) {
           ))}
         </article>
       </section>
-      <section id="recipe" className="m-4 border-2 border-black">
+      <section className="m-4 border-2 relative border-black">
+        <div id="recipe" className="absolute -top-24"></div>
         <div className="relative">
           <Image
             src={recipeInfo.image}
@@ -54,7 +57,7 @@ export default async function IndividualRecipe({ params }) {
               <RatingStar />
             </div>
             <div className="flex gap-2">
-              <ul className="flex gap-2">
+              <ul className="flex flex-wrap gap-2">
                 {recipeInfo.tags.map((tag, index) => (
                   <li key={index}>
                     <RecipeTag tag={tag} />
