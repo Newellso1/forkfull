@@ -20,14 +20,15 @@ export default async function IndividualRecipe({ params }) {
   }
 
   return (
-    <div className="">
+    <div className="md:px-60">
       <ScrollButton section="recipe" />
-      <div className="relative">
+      <div className="relative ">
         <Image
           src={recipeInfo.image}
           height={500}
           width={500}
           alt="recipe image"
+          className="md:w-full md:"
         ></Image>
       </div>
       <section className="mt-2 flex flex-col gap-2 p-2">
@@ -48,13 +49,14 @@ export default async function IndividualRecipe({ params }) {
             height={500}
             width={500}
             alt="recipe image"
+            className="w-full"
           ></Image>
           <div className="absolute bottom-5 left-5 flex flex-col gap-2 drop-shadow-md shadow-black ">
             <h3 className="bg-white text-2xl w-fit p-1 px-2  rounded-sm">
               {recipeInfo.name}
             </h3>
             <div className="bg-white w-fit p-1 px-2 rounded-sm">
-              <RatingStar />
+              <RatingStar rating={recipeInfo.rating} />
             </div>
             <div className="flex gap-2">
               <ul className="flex flex-wrap gap-2">

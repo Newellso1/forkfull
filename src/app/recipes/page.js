@@ -51,7 +51,7 @@ export default function Recipes() {
   ];
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 items-center">
       <div className="flex flex-col gap-2">
         <h1 className={`${sankofa.className} text-3xl text-center`}>Recipes</h1>
         <div className="flex flex-col items-center justify-center gap-3">
@@ -87,7 +87,7 @@ export default function Recipes() {
           </div>
         </div>
       </div>
-      <ul className="flex gap-2 md:gap-10 md:w-[50em] md:max-w-[50em] justify-center flex-wrap">
+      <ul className="flex gap-2 md:gap-10 md:w-[50em] md:max-w-[50em] justify-center flex-wrap border-2 border-black">
         {sortedRecipes.map((recipe) => (
           <li key={recipe.id}>
             <RecipeCard
